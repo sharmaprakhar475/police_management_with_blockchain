@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Police_menu_page</class>
+ <widget class="QDialog" name="Police_menu_page">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>875</width>
+    <height>591</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QPushButton" name="police_logout_button">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>540</y>
+     <width>101</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Logout</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>130</y>
+     <width>190</width>
+     <height>44</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; font-weight:700;&quot;&gt;Police Menu&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>210</y>
+     <width>177</width>
+     <height>211</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QPushButton" name="police_register_fir_button">
+      <property name="text">
+       <string>Register FIR</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="police_view_fir_button">
+      <property name="text">
+       <string>View FIR</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="police_update_fir_status_button">
+      <property name="text">
+       <string>Update FIR Status</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="police_view_complaint_button">
+      <property name="text">
+       <string>View Complaints</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="police_update_complaint_status_button">
+      <property name="text">
+       <string>Update Complaint Status</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
