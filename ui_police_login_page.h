@@ -16,87 +16,70 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_Police_login_page
 {
 public:
-    QVBoxLayout *verticalLayout_3;
-    QVBoxLayout *verticalLayout_2;
-    QVBoxLayout *verticalLayout;
+    QPushButton *back_button;
+    QPushButton *police_login;
     QLabel *label_3;
-    QHBoxLayout *horizontalLayout_2;
-    QLabel *police_password_label;
-    QLineEdit *police_password;
+    QWidget *widget;
     QHBoxLayout *horizontalLayout;
     QLabel *police_id_label;
     QLineEdit *police_id;
-    QPushButton *police_login;
-    QPushButton *back_button;
+    QWidget *widget1;
+    QHBoxLayout *horizontalLayout_2;
+    QLabel *police_password_label;
+    QLineEdit *police_password;
 
     void setupUi(QDialog *Police_login_page)
     {
         if (Police_login_page->objectName().isEmpty())
             Police_login_page->setObjectName("Police_login_page");
-        Police_login_page->resize(400, 300);
-        verticalLayout_3 = new QVBoxLayout(Police_login_page);
-        verticalLayout_3->setObjectName("verticalLayout_3");
-        verticalLayout_2 = new QVBoxLayout();
-        verticalLayout_2->setObjectName("verticalLayout_2");
-        verticalLayout = new QVBoxLayout();
-        verticalLayout->setObjectName("verticalLayout");
+        Police_login_page->resize(858, 576);
+        back_button = new QPushButton(Police_login_page);
+        back_button->setObjectName("back_button");
+        back_button->setGeometry(QRect(10, 530, 80, 29));
+        police_login = new QPushButton(Police_login_page);
+        police_login->setObjectName("police_login");
+        police_login->setGeometry(QRect(349, 340, 111, 29));
         label_3 = new QLabel(Police_login_page);
         label_3->setObjectName("label_3");
-
-        verticalLayout->addWidget(label_3);
-
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setObjectName("horizontalLayout_2");
-        police_password_label = new QLabel(Police_login_page);
-        police_password_label->setObjectName("police_password_label");
-
-        horizontalLayout_2->addWidget(police_password_label);
-
-        police_password = new QLineEdit(Police_login_page);
-        police_password->setObjectName("police_password");
-
-        horizontalLayout_2->addWidget(police_password);
-
-
-        verticalLayout->addLayout(horizontalLayout_2);
-
-        horizontalLayout = new QHBoxLayout();
+        label_3->setGeometry(QRect(300, 100, 270, 44));
+        widget = new QWidget(Police_login_page);
+        widget->setObjectName("widget");
+        widget->setGeometry(QRect(301, 190, 207, 30));
+        horizontalLayout = new QHBoxLayout(widget);
         horizontalLayout->setObjectName("horizontalLayout");
-        police_id_label = new QLabel(Police_login_page);
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        police_id_label = new QLabel(widget);
         police_id_label->setObjectName("police_id_label");
 
         horizontalLayout->addWidget(police_id_label);
 
-        police_id = new QLineEdit(Police_login_page);
+        police_id = new QLineEdit(widget);
         police_id->setObjectName("police_id");
 
         horizontalLayout->addWidget(police_id);
 
+        widget1 = new QWidget(Police_login_page);
+        widget1->setObjectName("widget1");
+        widget1->setGeometry(QRect(301, 261, 215, 30));
+        horizontalLayout_2 = new QHBoxLayout(widget1);
+        horizontalLayout_2->setObjectName("horizontalLayout_2");
+        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
+        police_password_label = new QLabel(widget1);
+        police_password_label->setObjectName("police_password_label");
 
-        verticalLayout->addLayout(horizontalLayout);
+        horizontalLayout_2->addWidget(police_password_label);
 
+        police_password = new QLineEdit(widget1);
+        police_password->setObjectName("police_password");
 
-        verticalLayout_2->addLayout(verticalLayout);
-
-        police_login = new QPushButton(Police_login_page);
-        police_login->setObjectName("police_login");
-
-        verticalLayout_2->addWidget(police_login);
-
-
-        verticalLayout_3->addLayout(verticalLayout_2);
-
-        back_button = new QPushButton(Police_login_page);
-        back_button->setObjectName("back_button");
-
-        verticalLayout_3->addWidget(back_button);
+        horizontalLayout_2->addWidget(police_password);
 
 
         retranslateUi(Police_login_page);
@@ -107,11 +90,29 @@ public:
     void retranslateUi(QDialog *Police_login_page)
     {
         Police_login_page->setWindowTitle(QCoreApplication::translate("Police_login_page", "Dialog", nullptr));
-        label_3->setText(QCoreApplication::translate("Police_login_page", "Police Login Page", nullptr));
-        police_password_label->setText(QCoreApplication::translate("Police_login_page", "Password", nullptr));
-        police_id_label->setText(QCoreApplication::translate("Police_login_page", "Police Id", nullptr));
-        police_login->setText(QCoreApplication::translate("Police_login_page", "Login", nullptr));
         back_button->setText(QCoreApplication::translate("Police_login_page", "Back", nullptr));
+#if QT_CONFIG(whatsthis)
+        police_login->setWhatsThis(QCoreApplication::translate("Police_login_page", "<html><head/><body><p align=\"justify\"><span style=\" font-weight:700;\">Login</span></p></body></html>", nullptr));
+#endif // QT_CONFIG(whatsthis)
+        police_login->setText(QCoreApplication::translate("Police_login_page", "Login", nullptr));
+#if QT_CONFIG(whatsthis)
+        label_3->setWhatsThis(QCoreApplication::translate("Police_login_page", "<html><head/><body><p align=\"justify\"><br/></p></body></html>", nullptr));
+#endif // QT_CONFIG(whatsthis)
+        label_3->setText(QCoreApplication::translate("Police_login_page", "<html><head/><body><p><span style=\" font-size:20pt; font-weight:700;\">Police Login Page</span></p></body></html>", nullptr));
+#if QT_CONFIG(whatsthis)
+        police_id_label->setWhatsThis(QCoreApplication::translate("Police_login_page", "<html><head/><body><p align=\"justify\"><br/></p></body></html>", nullptr));
+#endif // QT_CONFIG(whatsthis)
+        police_id_label->setText(QCoreApplication::translate("Police_login_page", "<html><head/><body><p><span style=\" font-size:12pt;\">Police Id</span></p></body></html>", nullptr));
+#if QT_CONFIG(whatsthis)
+        police_id->setWhatsThis(QCoreApplication::translate("Police_login_page", "<html><head/><body><p align=\"justify\"><br/></p></body></html>", nullptr));
+#endif // QT_CONFIG(whatsthis)
+#if QT_CONFIG(whatsthis)
+        police_password_label->setWhatsThis(QCoreApplication::translate("Police_login_page", "<html><head/><body><p align=\"justify\"><br/></p></body></html>", nullptr));
+#endif // QT_CONFIG(whatsthis)
+        police_password_label->setText(QCoreApplication::translate("Police_login_page", "<html><head/><body><p><span style=\" font-size:12pt;\">Password</span></p></body></html>", nullptr));
+#if QT_CONFIG(whatsthis)
+        police_password->setWhatsThis(QCoreApplication::translate("Police_login_page", "<html><head/><body><p align=\"justify\"><br/></p></body></html>", nullptr));
+#endif // QT_CONFIG(whatsthis)
     } // retranslateUi
 
 };

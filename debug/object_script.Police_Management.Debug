@@ -1,3 +1,4 @@
+debug/block.o
 debug/complaint.o
 debug/fir.o
 debug/global.o
@@ -9,6 +10,7 @@ debug/police_register_page.o
 debug/policestation.o
 debug/register_complaint.o
 debug/register_fir.o
+debug/sha256.o
 debug/update_complaint_status.o
 debug/update_fir_status.o
 debug/user.o
@@ -16,7 +18,6 @@ debug/user_login_page.o
 debug/user_menu_page.o
 debug/user_register_page.o
 debug/view_complaint_status.o
-debug/view_complaints.o
 debug/view_fir.o
 debug/moc_mainwindow.o
 debug/moc_police_login_page.o
@@ -30,5 +31,4 @@ debug/moc_user_login_page.o
 debug/moc_user_menu_page.o
 debug/moc_user_register_page.o
 debug/moc_view_complaint_status.o
-debug/moc_view_complaints.o
 debug/moc_view_fir.o

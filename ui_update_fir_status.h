@@ -16,58 +16,71 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_Update_fir_status
 {
 public:
-    QVBoxLayout *verticalLayout_2;
-    QVBoxLayout *verticalLayout;
-    QLabel *label_2;
+    QWidget *widget;
+    QHBoxLayout *horizontalLayout_2;
+    QLabel *label_3;
+    QLineEdit *new_fir_status;
+    QWidget *widget1;
     QHBoxLayout *horizontalLayout;
     QLabel *label;
-    QLineEdit *lineEdit;
-    QPushButton *pushButton;
+    QLineEdit *fir_id;
+    QLabel *label_2;
+    QPushButton *update_status_button;
+    QPushButton *back_button;
 
     void setupUi(QDialog *Update_fir_status)
     {
         if (Update_fir_status->objectName().isEmpty())
             Update_fir_status->setObjectName("Update_fir_status");
-        Update_fir_status->resize(400, 300);
-        verticalLayout_2 = new QVBoxLayout(Update_fir_status);
-        verticalLayout_2->setObjectName("verticalLayout_2");
-        verticalLayout = new QVBoxLayout();
-        verticalLayout->setObjectName("verticalLayout");
-        label_2 = new QLabel(Update_fir_status);
-        label_2->setObjectName("label_2");
+        Update_fir_status->resize(785, 567);
+        widget = new QWidget(Update_fir_status);
+        widget->setObjectName("widget");
+        widget->setGeometry(QRect(260, 270, 291, 30));
+        horizontalLayout_2 = new QHBoxLayout(widget);
+        horizontalLayout_2->setObjectName("horizontalLayout_2");
+        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
+        label_3 = new QLabel(widget);
+        label_3->setObjectName("label_3");
 
-        verticalLayout->addWidget(label_2);
+        horizontalLayout_2->addWidget(label_3);
 
-        horizontalLayout = new QHBoxLayout();
+        new_fir_status = new QLineEdit(widget);
+        new_fir_status->setObjectName("new_fir_status");
+
+        horizontalLayout_2->addWidget(new_fir_status);
+
+        widget1 = new QWidget(Update_fir_status);
+        widget1->setObjectName("widget1");
+        widget1->setGeometry(QRect(260, 210, 291, 30));
+        horizontalLayout = new QHBoxLayout(widget1);
         horizontalLayout->setObjectName("horizontalLayout");
-        label = new QLabel(Update_fir_status);
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        label = new QLabel(widget1);
         label->setObjectName("label");
 
         horizontalLayout->addWidget(label);
 
-        lineEdit = new QLineEdit(Update_fir_status);
-        lineEdit->setObjectName("lineEdit");
+        fir_id = new QLineEdit(widget1);
+        fir_id->setObjectName("fir_id");
 
-        horizontalLayout->addWidget(lineEdit);
+        horizontalLayout->addWidget(fir_id);
 
-
-        verticalLayout->addLayout(horizontalLayout);
-
-        pushButton = new QPushButton(Update_fir_status);
-        pushButton->setObjectName("pushButton");
-
-        verticalLayout->addWidget(pushButton);
-
-
-        verticalLayout_2->addLayout(verticalLayout);
-
+        label_2 = new QLabel(Update_fir_status);
+        label_2->setObjectName("label_2");
+        label_2->setGeometry(QRect(280, 120, 277, 44));
+        update_status_button = new QPushButton(Update_fir_status);
+        update_status_button->setObjectName("update_status_button");
+        update_status_button->setGeometry(QRect(330, 340, 151, 31));
+        back_button = new QPushButton(Update_fir_status);
+        back_button->setObjectName("back_button");
+        back_button->setGeometry(QRect(10, 528, 91, 31));
 
         retranslateUi(Update_fir_status);
 
@@ -77,9 +90,11 @@ public:
     void retranslateUi(QDialog *Update_fir_status)
     {
         Update_fir_status->setWindowTitle(QCoreApplication::translate("Update_fir_status", "Dialog", nullptr));
-        label_2->setText(QCoreApplication::translate("Update_fir_status", "Update FIR Status", nullptr));
-        label->setText(QCoreApplication::translate("Update_fir_status", "FIR Id", nullptr));
-        pushButton->setText(QCoreApplication::translate("Update_fir_status", "Check", nullptr));
+        label_3->setText(QCoreApplication::translate("Update_fir_status", "<html><head/><body><p><span style=\" font-size:12pt;\">New FIR Status</span></p></body></html>", nullptr));
+        label->setText(QCoreApplication::translate("Update_fir_status", "<html><head/><body><p><span style=\" font-size:12pt;\">FIR ID</span></p></body></html>", nullptr));
+        label_2->setText(QCoreApplication::translate("Update_fir_status", "<html><head/><body><p><span style=\" font-size:20pt; font-weight:700;\">Update FIR Status</span></p></body></html>", nullptr));
+        update_status_button->setText(QCoreApplication::translate("Update_fir_status", "Update Status", nullptr));
+        back_button->setText(QCoreApplication::translate("Update_fir_status", "Back", nullptr));
     } // retranslateUi
 
 };

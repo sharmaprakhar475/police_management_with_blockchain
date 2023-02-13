@@ -28,35 +28,35 @@ namespace {
 struct qt_meta_stringdata_Police_menu_page_t {
     uint offsetsAndSizes[16];
     char stringdata0[17];
-    char stringdata1[40];
+    char stringdata1[49];
     char stringdata2[1];
-    char stringdata3[49];
-    char stringdata4[38];
-    char stringdata5[34];
-    char stringdata6[43];
-    char stringdata7[32];
+    char stringdata3[38];
+    char stringdata4[34];
+    char stringdata5[43];
+    char stringdata6[32];
+    char stringdata7[40];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_Police_menu_page_t::offsetsAndSizes) + ofs), len 
 Q_CONSTINIT static const qt_meta_stringdata_Police_menu_page_t qt_meta_stringdata_Police_menu_page = {
     {
         QT_MOC_LITERAL(0, 16),  // "Police_menu_page"
-        QT_MOC_LITERAL(17, 39),  // "on_police_view_complaint_butt..."
-        QT_MOC_LITERAL(57, 0),  // ""
-        QT_MOC_LITERAL(58, 48),  // "on_police_update_complaint_st..."
-        QT_MOC_LITERAL(107, 37),  // "on_police_register_fir_button..."
-        QT_MOC_LITERAL(145, 33),  // "on_police_view_fir_button_cli..."
-        QT_MOC_LITERAL(179, 42),  // "on_police_update_fir_status_b..."
-        QT_MOC_LITERAL(222, 31)   // "on_police_logout_button_clicked"
+        QT_MOC_LITERAL(17, 48),  // "on_police_update_complaint_st..."
+        QT_MOC_LITERAL(66, 0),  // ""
+        QT_MOC_LITERAL(67, 37),  // "on_police_register_fir_button..."
+        QT_MOC_LITERAL(105, 33),  // "on_police_view_fir_button_cli..."
+        QT_MOC_LITERAL(139, 42),  // "on_police_update_fir_status_b..."
+        QT_MOC_LITERAL(182, 31),  // "on_police_logout_button_clicked"
+        QT_MOC_LITERAL(214, 39)   // "on_police_view_complaint_butt..."
     },
     "Police_menu_page",
-    "on_police_view_complaint_button_clicked",
-    "",
     "on_police_update_complaint_status_button_clicked",
+    "",
     "on_police_register_fir_button_clicked",
     "on_police_view_fir_button_clicked",
     "on_police_update_fir_status_button_clicked",
-    "on_police_logout_button_clicked"
+    "on_police_logout_button_clicked",
+    "on_police_view_complaint_button_clicked"
 };
 #undef QT_MOC_LITERAL
 } // unnamed namespace
@@ -102,8 +102,6 @@ Q_CONSTINIT const QMetaObject Police_menu_page::staticMetaObject = { {
     qt_incomplete_metaTypeArray<qt_meta_stringdata_Police_menu_page_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<Police_menu_page, std::true_type>,
-        // method 'on_police_view_complaint_button_clicked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_police_update_complaint_status_button_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_police_register_fir_button_clicked'
@@ -113,6 +111,8 @@ Q_CONSTINIT const QMetaObject Police_menu_page::staticMetaObject = { {
         // method 'on_police_update_fir_status_button_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_police_logout_button_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_police_view_complaint_button_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -124,12 +124,12 @@ void Police_menu_page::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
         auto *_t = static_cast<Police_menu_page *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->on_police_view_complaint_button_clicked(); break;
-        case 1: _t->on_police_update_complaint_status_button_clicked(); break;
-        case 2: _t->on_police_register_fir_button_clicked(); break;
-        case 3: _t->on_police_view_fir_button_clicked(); break;
-        case 4: _t->on_police_update_fir_status_button_clicked(); break;
-        case 5: _t->on_police_logout_button_clicked(); break;
+        case 0: _t->on_police_update_complaint_status_button_clicked(); break;
+        case 1: _t->on_police_register_fir_button_clicked(); break;
+        case 2: _t->on_police_view_fir_button_clicked(); break;
+        case 3: _t->on_police_update_fir_status_button_clicked(); break;
+        case 4: _t->on_police_logout_button_clicked(); break;
+        case 5: _t->on_police_view_complaint_button_clicked(); break;
         default: ;
         }
     }

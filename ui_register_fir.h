@@ -16,57 +16,50 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_Register_fir
 {
 public:
-    QVBoxLayout *verticalLayout_2;
-    QVBoxLayout *verticalLayout;
+    QPushButton *pushButton;
+    QPushButton *register_fir;
     QLabel *label;
+    QWidget *widget;
     QHBoxLayout *horizontalLayout;
     QLabel *label_2;
-    QLineEdit *lineEdit;
-    QPushButton *pushButton;
+    QLineEdit *complaint_id;
 
     void setupUi(QDialog *Register_fir)
     {
         if (Register_fir->objectName().isEmpty())
             Register_fir->setObjectName("Register_fir");
-        Register_fir->resize(709, 575);
-        verticalLayout_2 = new QVBoxLayout(Register_fir);
-        verticalLayout_2->setObjectName("verticalLayout_2");
-        verticalLayout = new QVBoxLayout();
-        verticalLayout->setObjectName("verticalLayout");
+        Register_fir->resize(786, 599);
+        pushButton = new QPushButton(Register_fir);
+        pushButton->setObjectName("pushButton");
+        pushButton->setGeometry(QRect(10, 560, 80, 29));
+        register_fir = new QPushButton(Register_fir);
+        register_fir->setObjectName("register_fir");
+        register_fir->setGeometry(QRect(320, 300, 131, 31));
         label = new QLabel(Register_fir);
         label->setObjectName("label");
-
-        verticalLayout->addWidget(label);
-
-        horizontalLayout = new QHBoxLayout();
+        label->setGeometry(QRect(320, 150, 185, 44));
+        widget = new QWidget(Register_fir);
+        widget->setObjectName("widget");
+        widget->setGeometry(QRect(250, 230, 291, 30));
+        horizontalLayout = new QHBoxLayout(widget);
         horizontalLayout->setObjectName("horizontalLayout");
-        label_2 = new QLabel(Register_fir);
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        label_2 = new QLabel(widget);
         label_2->setObjectName("label_2");
 
         horizontalLayout->addWidget(label_2);
 
-        lineEdit = new QLineEdit(Register_fir);
-        lineEdit->setObjectName("lineEdit");
+        complaint_id = new QLineEdit(widget);
+        complaint_id->setObjectName("complaint_id");
 
-        horizontalLayout->addWidget(lineEdit);
-
-
-        verticalLayout->addLayout(horizontalLayout);
-
-        pushButton = new QPushButton(Register_fir);
-        pushButton->setObjectName("pushButton");
-
-        verticalLayout->addWidget(pushButton);
-
-
-        verticalLayout_2->addLayout(verticalLayout);
+        horizontalLayout->addWidget(complaint_id);
 
 
         retranslateUi(Register_fir);
@@ -77,9 +70,10 @@ public:
     void retranslateUi(QDialog *Register_fir)
     {
         Register_fir->setWindowTitle(QCoreApplication::translate("Register_fir", "Dialog", nullptr));
-        label->setText(QCoreApplication::translate("Register_fir", "Register FIR", nullptr));
-        label_2->setText(QCoreApplication::translate("Register_fir", "Complaint ID", nullptr));
-        pushButton->setText(QCoreApplication::translate("Register_fir", "Register", nullptr));
+        pushButton->setText(QCoreApplication::translate("Register_fir", "Back", nullptr));
+        register_fir->setText(QCoreApplication::translate("Register_fir", "Register", nullptr));
+        label->setText(QCoreApplication::translate("Register_fir", "<html><head/><body><p><span style=\" font-size:20pt; font-weight:700;\">Register FIR</span></p></body></html>", nullptr));
+        label_2->setText(QCoreApplication::translate("Register_fir", "<html><head/><body><p><span style=\" font-size:12pt;\">Complaint ID</span></p></body></html>", nullptr));
     } // retranslateUi
 
 };

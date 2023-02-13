@@ -15,16 +15,18 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
-#include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_View_complaint_status
 {
 public:
-    QVBoxLayout *verticalLayout_3;
-    QVBoxLayout *verticalLayout_2;
+    QPushButton *check_complaint_details_button;
+    QPushButton *back_user_menu_button;
     QLabel *label_2;
+    QWidget *widget;
     QHBoxLayout *horizontalLayout;
     QLabel *label;
     QLineEdit *complaint_id;
@@ -33,33 +35,31 @@ public:
     {
         if (View_complaint_status->objectName().isEmpty())
             View_complaint_status->setObjectName("View_complaint_status");
-        View_complaint_status->resize(496, 426);
-        verticalLayout_3 = new QVBoxLayout(View_complaint_status);
-        verticalLayout_3->setObjectName("verticalLayout_3");
-        verticalLayout_2 = new QVBoxLayout();
-        verticalLayout_2->setObjectName("verticalLayout_2");
+        View_complaint_status->resize(793, 601);
+        check_complaint_details_button = new QPushButton(View_complaint_status);
+        check_complaint_details_button->setObjectName("check_complaint_details_button");
+        check_complaint_details_button->setGeometry(QRect(300, 280, 131, 31));
+        back_user_menu_button = new QPushButton(View_complaint_status);
+        back_user_menu_button->setObjectName("back_user_menu_button");
+        back_user_menu_button->setGeometry(QRect(10, 558, 91, 31));
         label_2 = new QLabel(View_complaint_status);
         label_2->setObjectName("label_2");
-
-        verticalLayout_2->addWidget(label_2);
-
-        horizontalLayout = new QHBoxLayout();
+        label_2->setGeometry(QRect(230, 130, 350, 44));
+        widget = new QWidget(View_complaint_status);
+        widget->setObjectName("widget");
+        widget->setGeometry(QRect(250, 210, 247, 30));
+        horizontalLayout = new QHBoxLayout(widget);
         horizontalLayout->setObjectName("horizontalLayout");
-        label = new QLabel(View_complaint_status);
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        label = new QLabel(widget);
         label->setObjectName("label");
 
         horizontalLayout->addWidget(label);
 
-        complaint_id = new QLineEdit(View_complaint_status);
+        complaint_id = new QLineEdit(widget);
         complaint_id->setObjectName("complaint_id");
 
         horizontalLayout->addWidget(complaint_id);
-
-
-        verticalLayout_2->addLayout(horizontalLayout);
-
-
-        verticalLayout_3->addLayout(verticalLayout_2);
 
 
         retranslateUi(View_complaint_status);
@@ -70,8 +70,10 @@ public:
     void retranslateUi(QDialog *View_complaint_status)
     {
         View_complaint_status->setWindowTitle(QCoreApplication::translate("View_complaint_status", "Dialog", nullptr));
-        label_2->setText(QCoreApplication::translate("View_complaint_status", "View Complaint Status", nullptr));
-        label->setText(QCoreApplication::translate("View_complaint_status", "Complaint Id", nullptr));
+        check_complaint_details_button->setText(QCoreApplication::translate("View_complaint_status", "Check Details", nullptr));
+        back_user_menu_button->setText(QCoreApplication::translate("View_complaint_status", "Back", nullptr));
+        label_2->setText(QCoreApplication::translate("View_complaint_status", "<html><head/><body><p><span style=\" font-size:20pt; font-weight:700;\">View Complaint Status</span></p></body></html>", nullptr));
+        label->setText(QCoreApplication::translate("View_complaint_status", "<html><head/><body><p><span style=\" font-size:12pt;\">Complaint Id</span></p></body></html>", nullptr));
     } // retranslateUi
 
 };

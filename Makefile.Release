@@ -50,7 +50,8 @@ OBJECTS_DIR   = release
 
 ####### Files
 
-SOURCES       = ..\Police_Management\complaint.cpp \
+SOURCES       = ..\Police_Management\block.cpp \
+		..\Police_Management\complaint.cpp \
 		..\Police_Management\fir.cpp \
 		..\Police_Management\global.cpp \
 		..\Police_Management\main.cpp \
@@ -61,6 +62,7 @@ SOURCES       = ..\Police_Management\complaint.cpp \
 		..\Police_Management\policestation.cpp \
 		..\Police_Management\register_complaint.cpp \
 		..\Police_Management\register_fir.cpp \
+		..\Police_Management\sha256.cpp \
 		..\Police_Management\update_complaint_status.cpp \
 		..\Police_Management\update_fir_status.cpp \
 		..\Police_Management\user.cpp \
@@ -68,7 +70,6 @@ SOURCES       = ..\Police_Management\complaint.cpp \
 		..\Police_Management\user_menu_page.cpp \
 		..\Police_Management\user_register_page.cpp \
 		..\Police_Management\view_complaint_status.cpp \
-		..\Police_Management\view_complaints.cpp \
 		..\Police_Management\view_fir.cpp release\moc_mainwindow.cpp \
 		release\moc_police_login_page.cpp \
 		release\moc_police_menu_page.cpp \
@@ -81,9 +82,9 @@ SOURCES       = ..\Police_Management\complaint.cpp \
 		release\moc_user_menu_page.cpp \
 		release\moc_user_register_page.cpp \
 		release\moc_view_complaint_status.cpp \
-		release\moc_view_complaints.cpp \
 		release\moc_view_fir.cpp
-OBJECTS       = release/complaint.o \
+OBJECTS       = release/block.o \
+		release/complaint.o \
 		release/fir.o \
 		release/global.o \
 		release/main.o \
@@ -94,6 +95,7 @@ OBJECTS       = release/complaint.o \
 		release/policestation.o \
 		release/register_complaint.o \
 		release/register_fir.o \
+		release/sha256.o \
 		release/update_complaint_status.o \
 		release/update_fir_status.o \
 		release/user.o \
@@ -101,7 +103,6 @@ OBJECTS       = release/complaint.o \
 		release/user_menu_page.o \
 		release/user_register_page.o \
 		release/view_complaint_status.o \
-		release/view_complaints.o \
 		release/view_fir.o \
 		release/moc_mainwindow.o \
 		release/moc_police_login_page.o \
@@ -115,10 +116,10 @@ OBJECTS       = release/complaint.o \
 		release/moc_user_menu_page.o \
 		release/moc_user_register_page.o \
 		release/moc_view_complaint_status.o \
-		release/moc_view_complaints.o \
 		release/moc_view_fir.o
 
-DIST          =  ..\Police_Management\complaint.h \
+DIST          =  ..\Police_Management\block.h \
+		..\Police_Management\complaint.h \
 		..\Police_Management\fir.h \
 		..\Police_Management\global.h \
 		..\Police_Management\mainwindow.h \
@@ -128,6 +129,7 @@ DIST          =  ..\Police_Management\complaint.h \
 		..\Police_Management\policestation.h \
 		..\Police_Management\register_complaint.h \
 		..\Police_Management\register_fir.h \
+		..\Police_Management\sha256.h \
 		..\Police_Management\update_complaint_status.h \
 		..\Police_Management\update_fir_status.h \
 		..\Police_Management\user.h \
@@ -135,8 +137,8 @@ DIST          =  ..\Police_Management\complaint.h \
 		..\Police_Management\user_menu_page.h \
 		..\Police_Management\user_register_page.h \
 		..\Police_Management\view_complaint_status.h \
-		..\Police_Management\view_complaints.h \
-		..\Police_Management\view_fir.h ..\Police_Management\complaint.cpp \
+		..\Police_Management\view_fir.h ..\Police_Management\block.cpp \
+		..\Police_Management\complaint.cpp \
 		..\Police_Management\fir.cpp \
 		..\Police_Management\global.cpp \
 		..\Police_Management\main.cpp \
@@ -147,6 +149,7 @@ DIST          =  ..\Police_Management\complaint.h \
 		..\Police_Management\policestation.cpp \
 		..\Police_Management\register_complaint.cpp \
 		..\Police_Management\register_fir.cpp \
+		..\Police_Management\sha256.cpp \
 		..\Police_Management\update_complaint_status.cpp \
 		..\Police_Management\update_fir_status.cpp \
 		..\Police_Management\user.cpp \
@@ -154,7 +157,6 @@ DIST          =  ..\Police_Management\complaint.h \
 		..\Police_Management\user_menu_page.cpp \
 		..\Police_Management\user_register_page.cpp \
 		..\Police_Management\view_complaint_status.cpp \
-		..\Police_Management\view_complaints.cpp \
 		..\Police_Management\view_fir.cpp
 QMAKE_TARGET  = Police_Management
 DESTDIR        = release\ #avoid trailing-slash linebreak
@@ -166,7 +168,7 @@ DESTDIR_TARGET = release\Police_Management.exe
 first: all
 all: Makefile.Release  release/Police_Management.exe
 
-release/Police_Management.exe: C:/Qt/6.4.2/mingw_64/lib/libQt6Widgets.a C:/Qt/6.4.2/mingw_64/lib/libQt6Gui.a C:/Qt/6.4.2/mingw_64/lib/libQt6Core.a C:/Qt/6.4.2/mingw_64/lib/libQt6EntryPoint.a ui_mainwindow.h ui_police_login_page.h ui_police_menu_page.h ui_police_register_page.h ui_register_complaint.h ui_register_fir.h ui_update_complaint_status.h ui_update_fir_status.h ui_user_login_page.h ui_user_menu_page.h ui_user_register_page.h ui_view_complaint_status.h ui_view_complaints.h ui_view_fir.h $(OBJECTS) 
+release/Police_Management.exe: C:/Qt/6.4.2/mingw_64/lib/libQt6Widgets.a C:/Qt/6.4.2/mingw_64/lib/libQt6Gui.a C:/Qt/6.4.2/mingw_64/lib/libQt6Core.a C:/Qt/6.4.2/mingw_64/lib/libQt6EntryPoint.a ui_mainwindow.h ui_police_login_page.h ui_police_menu_page.h ui_police_register_page.h ui_register_complaint.h ui_register_fir.h ui_update_complaint_status.h ui_update_fir_status.h ui_user_login_page.h ui_user_menu_page.h ui_user_register_page.h ui_view_complaint_status.h ui_view_fir.h $(OBJECTS) 
 	$(LINKER) $(LFLAGS) -o $(DESTDIR_TARGET) @release\object_script.Police_Management.Release $(LIBS)
 
 qmake: FORCE
@@ -175,10 +177,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) Police_Management.zip $(SOURCES) $(DIST) ..\Police_Management\Police_Management.pro ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\spec_pre.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\device_config.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\common\sanitize.conf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\common\gcc-base.conf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\common\g++-base.conf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\win32\windows_vulkan_sdk.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\common\windows-vulkan.conf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\common\g++-win32.conf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\common\windows-desktop.conf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\qconfig.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_ext_freetype.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_ext_libjpeg.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_ext_libpng.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_concurrent.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_concurrent_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_core.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_core_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_dbus.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_dbus_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_designer.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_designer_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_designercomponents_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_entrypoint_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_fb_support_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_freetype_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_gui.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_gui_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_harfbuzz_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_help.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_help_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_jpeg_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_labsanimation.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_labsanimation_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_labsfolderlistmodel.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_labsfolderlistmodel_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_labsqmlmodels.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_labsqmlmodels_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_labssettings.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_labssettings_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_labssharedimage.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_labssharedimage_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_labswavefrontmesh.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_labswavefrontmesh_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_linguist.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_linguist_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_network.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_network_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_opengl.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_opengl_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_openglwidgets.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_openglwidgets_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_packetprotocol_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_png_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_printsupport.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_printsupport_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qml.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qml_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlcompiler_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlcore.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlcore_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmldebug_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmldom_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlintegration.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlintegration_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmllocalstorage.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmllocalstorage_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlmodels.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlmodels_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmltest.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmltest_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlworkerscript.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlxmllistmodel.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlxmllistmodel_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quick.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quick_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2impl.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2impl_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickcontrolstestutilsprivate_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2utils.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2utils_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quicklayouts.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quicklayouts_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickparticles_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickshapes_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quicktemplates2.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quicktestutilsprivate_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickwidgets.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickwidgets_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_sql.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_sql_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_svg.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_svg_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_svgwidgets.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_svgwidgets_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_testlib.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_testlib_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_tools_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_uiplugin.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_uitools.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_uitools_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_widgets.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_widgets_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_xml.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_xml_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_zlib_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\qt_functions.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\qt_config.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\win32-g++\qmake.conf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\spec_post.prf .qmake.stash ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\exclusive_builds.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\toolchain.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\default_pre.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\win32\default_pre.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\resolve_config.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\exclusive_builds_post.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\default_post.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\build_pass.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\qml_debug.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\entrypoint.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\precompile_header.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\warn_on.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\qt.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\resources_functions.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\resources.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\moc.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\win32\opengl.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\uic.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\qmake_use.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\file_copies.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\win32\windows.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\testcase_targets.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\exceptions.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\yacc.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\lex.prf ..\Police_Management\Police_Management.pro ..\..\..\..\Qt\6.4.2\mingw_64\lib\Qt6Widgets.prl ..\..\..\..\Qt\6.4.2\mingw_64\lib\Qt6Gui.prl ..\..\..\..\Qt\6.4.2\mingw_64\lib\Qt6Core.prl ..\..\..\..\Qt\6.4.2\mingw_64\lib\Qt6EntryPoint.prl    ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\data\dummy.cpp ..\Police_Management\complaint.h ..\Police_Management\fir.h ..\Police_Management\global.h ..\Police_Management\mainwindow.h ..\Police_Management\police_login_page.h ..\Police_Management\police_menu_page.h ..\Police_Management\police_register_page.h ..\Police_Management\policestation.h ..\Police_Management\register_complaint.h ..\Police_Management\register_fir.h ..\Police_Management\update_complaint_status.h ..\Police_Management\update_fir_status.h ..\Police_Management\user.h ..\Police_Management\user_login_page.h ..\Police_Management\user_menu_page.h ..\Police_Management\user_register_page.h ..\Police_Management\view_complaint_status.h ..\Police_Management\view_complaints.h ..\Police_Management\view_fir.h  ..\Police_Management\complaint.cpp ..\Police_Management\fir.cpp ..\Police_Management\global.cpp ..\Police_Management\main.cpp ..\Police_Management\mainwindow.cpp ..\Police_Management\police_login_page.cpp ..\Police_Management\police_menu_page.cpp ..\Police_Management\police_register_page.cpp ..\Police_Management\policestation.cpp ..\Police_Management\register_complaint.cpp ..\Police_Management\register_fir.cpp ..\Police_Management\update_complaint_status.cpp ..\Police_Management\update_fir_status.cpp ..\Police_Management\user.cpp ..\Police_Management\user_login_page.cpp ..\Police_Management\user_menu_page.cpp ..\Police_Management\user_register_page.cpp ..\Police_Management\view_complaint_status.cpp ..\Police_Management\view_complaints.cpp ..\Police_Management\view_fir.cpp ..\Police_Management\mainwindow.ui ..\Police_Management\police_login_page.ui ..\Police_Management\police_menu_page.ui ..\Police_Management\police_register_page.ui ..\Police_Management\register_complaint.ui ..\Police_Management\register_fir.ui ..\Police_Management\update_complaint_status.ui ..\Police_Management\update_fir_status.ui ..\Police_Management\user_login_page.ui ..\Police_Management\user_menu_page.ui ..\Police_Management\user_register_page.ui ..\Police_Management\view_complaint_status.ui ..\Police_Management\view_complaints.ui ..\Police_Management\view_fir.ui    
+	$(ZIP) Police_Management.zip $(SOURCES) $(DIST) ..\Police_Management\Police_Management.pro ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\spec_pre.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\device_config.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\common\sanitize.conf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\common\gcc-base.conf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\common\g++-base.conf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\win32\windows_vulkan_sdk.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\common\windows-vulkan.conf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\common\g++-win32.conf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\common\windows-desktop.conf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\qconfig.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_ext_freetype.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_ext_libjpeg.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_ext_libpng.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_concurrent.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_concurrent_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_core.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_core_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_dbus.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_dbus_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_designer.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_designer_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_designercomponents_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_entrypoint_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_fb_support_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_freetype_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_gui.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_gui_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_harfbuzz_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_help.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_help_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_jpeg_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_labsanimation.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_labsanimation_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_labsfolderlistmodel.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_labsfolderlistmodel_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_labsqmlmodels.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_labsqmlmodels_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_labssettings.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_labssettings_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_labssharedimage.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_labssharedimage_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_labswavefrontmesh.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_labswavefrontmesh_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_linguist.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_linguist_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_network.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_network_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_opengl.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_opengl_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_openglwidgets.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_openglwidgets_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_packetprotocol_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_png_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_printsupport.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_printsupport_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qml.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qml_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlcompiler_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlcore.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlcore_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmldebug_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmldom_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlintegration.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlintegration_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmllocalstorage.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmllocalstorage_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlmodels.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlmodels_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmltest.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmltest_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlworkerscript.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlxmllistmodel.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_qmlxmllistmodel_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quick.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quick_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2impl.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickcontrols2impl_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickcontrolstestutilsprivate_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2utils.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickdialogs2utils_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quicklayouts.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quicklayouts_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickparticles_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickshapes_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quicktemplates2.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quicktestutilsprivate_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickwidgets.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_quickwidgets_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_sql.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_sql_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_svg.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_svg_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_svgwidgets.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_svgwidgets_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_testlib.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_testlib_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_tools_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_uiplugin.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_uitools.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_uitools_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_widgets.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_widgets_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_xml.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_xml_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\modules\qt_lib_zlib_private.pri ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\qt_functions.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\qt_config.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\win32-g++\qmake.conf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\spec_post.prf .qmake.stash ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\exclusive_builds.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\toolchain.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\default_pre.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\win32\default_pre.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\resolve_config.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\exclusive_builds_post.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\default_post.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\build_pass.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\qml_debug.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\entrypoint.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\precompile_header.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\warn_on.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\qt.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\resources_functions.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\resources.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\moc.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\win32\opengl.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\uic.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\qmake_use.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\file_copies.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\win32\windows.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\testcase_targets.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\exceptions.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\yacc.prf ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\lex.prf ..\Police_Management\Police_Management.pro ..\..\..\..\Qt\6.4.2\mingw_64\lib\Qt6Widgets.prl ..\..\..\..\Qt\6.4.2\mingw_64\lib\Qt6Gui.prl ..\..\..\..\Qt\6.4.2\mingw_64\lib\Qt6Core.prl ..\..\..\..\Qt\6.4.2\mingw_64\lib\Qt6EntryPoint.prl    ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\data\dummy.cpp ..\Police_Management\block.h ..\Police_Management\complaint.h ..\Police_Management\fir.h ..\Police_Management\global.h ..\Police_Management\mainwindow.h ..\Police_Management\police_login_page.h ..\Police_Management\police_menu_page.h ..\Police_Management\police_register_page.h ..\Police_Management\policestation.h ..\Police_Management\register_complaint.h ..\Police_Management\register_fir.h ..\Police_Management\sha256.h ..\Police_Management\update_complaint_status.h ..\Police_Management\update_fir_status.h ..\Police_Management\user.h ..\Police_Management\user_login_page.h ..\Police_Management\user_menu_page.h ..\Police_Management\user_register_page.h ..\Police_Management\view_complaint_status.h ..\Police_Management\view_fir.h  ..\Police_Management\block.cpp ..\Police_Management\complaint.cpp ..\Police_Management\fir.cpp ..\Police_Management\global.cpp ..\Police_Management\main.cpp ..\Police_Management\mainwindow.cpp ..\Police_Management\police_login_page.cpp ..\Police_Management\police_menu_page.cpp ..\Police_Management\police_register_page.cpp ..\Police_Management\policestation.cpp ..\Police_Management\register_complaint.cpp ..\Police_Management\register_fir.cpp ..\Police_Management\sha256.cpp ..\Police_Management\update_complaint_status.cpp ..\Police_Management\update_fir_status.cpp ..\Police_Management\user.cpp ..\Police_Management\user_login_page.cpp ..\Police_Management\user_menu_page.cpp ..\Police_Management\user_register_page.cpp ..\Police_Management\view_complaint_status.cpp ..\Police_Management\view_fir.cpp ..\Police_Management\mainwindow.ui ..\Police_Management\police_login_page.ui ..\Police_Management\police_menu_page.ui ..\Police_Management\police_register_page.ui ..\Police_Management\register_complaint.ui ..\Police_Management\register_fir.ui ..\Police_Management\update_complaint_status.ui ..\Police_Management\update_fir_status.ui ..\Police_Management\user_login_page.ui ..\Police_Management\user_menu_page.ui ..\Police_Management\user_register_page.ui ..\Police_Management\view_complaint_status.ui ..\Police_Management\view_fir.ui    
 
 clean: compiler_clean 
-	-$(DEL_FILE) release\complaint.o release\fir.o release\global.o release\main.o release\mainwindow.o release\police_login_page.o release\police_menu_page.o release\police_register_page.o release\policestation.o release\register_complaint.o release\register_fir.o release\update_complaint_status.o release\update_fir_status.o release\user.o release\user_login_page.o release\user_menu_page.o release\user_register_page.o release\view_complaint_status.o release\view_complaints.o release\view_fir.o release\moc_mainwindow.o release\moc_police_login_page.o release\moc_police_menu_page.o release\moc_police_register_page.o release\moc_register_complaint.o release\moc_register_fir.o release\moc_update_complaint_status.o release\moc_update_fir_status.o release\moc_user_login_page.o release\moc_user_menu_page.o release\moc_user_register_page.o release\moc_view_complaint_status.o release\moc_view_complaints.o release\moc_view_fir.o
+	-$(DEL_FILE) release\block.o release\complaint.o release\fir.o release\global.o release\main.o release\mainwindow.o release\police_login_page.o release\police_menu_page.o release\police_register_page.o release\policestation.o release\register_complaint.o release\register_fir.o release\sha256.o release\update_complaint_status.o release\update_fir_status.o release\user.o release\user_login_page.o release\user_menu_page.o release\user_register_page.o release\view_complaint_status.o release\view_fir.o release\moc_mainwindow.o release\moc_police_login_page.o release\moc_police_menu_page.o release\moc_police_register_page.o release\moc_register_complaint.o release\moc_register_fir.o release\moc_update_complaint_status.o release\moc_update_fir_status.o release\moc_user_login_page.o release\moc_user_menu_page.o release\moc_user_register_page.o release\moc_view_complaint_status.o release\moc_view_fir.o
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash
@@ -203,9 +205,9 @@ compiler_moc_predefs_clean:
 release/moc_predefs.h: ../../../../Qt/6.4.2/mingw_64/mkspecs/features/data/dummy.cpp
 	g++ -fno-keep-inline-dllexport -O2 -std=gnu++1z -Wall -Wextra -Wextra -dM -E -o release\moc_predefs.h ..\..\..\..\Qt\6.4.2\mingw_64\mkspecs\features\data\dummy.cpp
 
-compiler_moc_header_make_all: release/moc_mainwindow.cpp release/moc_police_login_page.cpp release/moc_police_menu_page.cpp release/moc_police_register_page.cpp release/moc_register_complaint.cpp release/moc_register_fir.cpp release/moc_update_complaint_status.cpp release/moc_update_fir_status.cpp release/moc_user_login_page.cpp release/moc_user_menu_page.cpp release/moc_user_register_page.cpp release/moc_view_complaint_status.cpp release/moc_view_complaints.cpp release/moc_view_fir.cpp
+compiler_moc_header_make_all: release/moc_mainwindow.cpp release/moc_police_login_page.cpp release/moc_police_menu_page.cpp release/moc_police_register_page.cpp release/moc_register_complaint.cpp release/moc_register_fir.cpp release/moc_update_complaint_status.cpp release/moc_update_fir_status.cpp release/moc_user_login_page.cpp release/moc_user_menu_page.cpp release/moc_user_register_page.cpp release/moc_view_complaint_status.cpp release/moc_view_fir.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) release\moc_mainwindow.cpp release\moc_police_login_page.cpp release\moc_police_menu_page.cpp release\moc_police_register_page.cpp release\moc_register_complaint.cpp release\moc_register_fir.cpp release\moc_update_complaint_status.cpp release\moc_update_fir_status.cpp release\moc_user_login_page.cpp release\moc_user_menu_page.cpp release\moc_user_register_page.cpp release\moc_view_complaint_status.cpp release\moc_view_complaints.cpp release\moc_view_fir.cpp
+	-$(DEL_FILE) release\moc_mainwindow.cpp release\moc_police_login_page.cpp release\moc_police_menu_page.cpp release\moc_police_register_page.cpp release\moc_register_complaint.cpp release\moc_register_fir.cpp release\moc_update_complaint_status.cpp release\moc_update_fir_status.cpp release\moc_user_login_page.cpp release\moc_user_menu_page.cpp release\moc_user_register_page.cpp release\moc_view_complaint_status.cpp release\moc_view_fir.cpp
 release/moc_mainwindow.cpp: ../Police_Management/mainwindow.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QMainWindow \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qmainwindow.h \
@@ -348,7 +350,14 @@ release/moc_mainwindow.cpp: ../Police_Management/mainwindow.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QDialog \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qdialog.h \
 		../Police_Management/user_menu_page.h \
+		../Police_Management/register_complaint.h \
+		../Police_Management/view_complaint_status.h \
 		../Police_Management/police_login_page.h \
+		../Police_Management/police_menu_page.h \
+		../Police_Management/update_complaint_status.h \
+		../Police_Management/register_fir.h \
+		../Police_Management/view_fir.h \
+		../Police_Management/update_fir_status.h \
 		../Police_Management/user_register_page.h \
 		../Police_Management/police_register_page.h \
 		release/moc_predefs.h \
@@ -492,6 +501,11 @@ release/moc_police_login_page.cpp: ../Police_Management/police_login_page.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/QSizeF \
 		../../../../Qt/6.4.2/mingw_64/include/QtGui/QTransform \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
+		../Police_Management/police_menu_page.h \
+		../Police_Management/update_complaint_status.h \
+		../Police_Management/register_fir.h \
+		../Police_Management/view_fir.h \
+		../Police_Management/update_fir_status.h \
 		release/moc_predefs.h \
 		../../../../Qt/6.4.2/mingw_64/bin/moc.exe
 	C:\Qt\6.4.2\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/DELL/Documents/build-Police_Management-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.4.2/mingw_64/mkspecs/win32-g++ -IC:/Users/DELL/Documents/Police_Management -IC:/Qt/6.4.2/mingw_64/include -IC:/Qt/6.4.2/mingw_64/include/QtWidgets -IC:/Qt/6.4.2/mingw_64/include/QtGui -IC:/Qt/6.4.2/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\Police_Management\police_login_page.h -o release\moc_police_login_page.cpp
@@ -633,6 +647,10 @@ release/moc_police_menu_page.cpp: ../Police_Management/police_menu_page.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/QSizeF \
 		../../../../Qt/6.4.2/mingw_64/include/QtGui/QTransform \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
+		../Police_Management/update_complaint_status.h \
+		../Police_Management/register_fir.h \
+		../Police_Management/view_fir.h \
+		../Police_Management/update_fir_status.h \
 		release/moc_predefs.h \
 		../../../../Qt/6.4.2/mingw_64/bin/moc.exe
 	C:\Qt\6.4.2\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/DELL/Documents/build-Police_Management-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.4.2/mingw_64/mkspecs/win32-g++ -IC:/Users/DELL/Documents/Police_Management -IC:/Qt/6.4.2/mingw_64/include -IC:/Qt/6.4.2/mingw_64/include/QtWidgets -IC:/Qt/6.4.2/mingw_64/include/QtGui -IC:/Qt/6.4.2/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\Police_Management\police_menu_page.h -o release\moc_police_menu_page.cpp
@@ -774,6 +792,12 @@ release/moc_police_register_page.cpp: ../Police_Management/police_register_page.
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/QSizeF \
 		../../../../Qt/6.4.2/mingw_64/include/QtGui/QTransform \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
+		../Police_Management/police_login_page.h \
+		../Police_Management/police_menu_page.h \
+		../Police_Management/update_complaint_status.h \
+		../Police_Management/register_fir.h \
+		../Police_Management/view_fir.h \
+		../Police_Management/update_fir_status.h \
 		release/moc_predefs.h \
 		../../../../Qt/6.4.2/mingw_64/bin/moc.exe
 	C:\Qt\6.4.2\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/DELL/Documents/build-Police_Management-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.4.2/mingw_64/mkspecs/win32-g++ -IC:/Users/DELL/Documents/Police_Management -IC:/Qt/6.4.2/mingw_64/include -IC:/Qt/6.4.2/mingw_64/include/QtWidgets -IC:/Qt/6.4.2/mingw_64/include/QtGui -IC:/Qt/6.4.2/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\Police_Management\police_register_page.h -o release\moc_police_register_page.cpp
@@ -1480,6 +1504,8 @@ release/moc_user_login_page.cpp: ../Police_Management/user_login_page.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtGui/QTransform \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
 		../Police_Management/user_menu_page.h \
+		../Police_Management/register_complaint.h \
+		../Police_Management/view_complaint_status.h \
 		release/moc_predefs.h \
 		../../../../Qt/6.4.2/mingw_64/bin/moc.exe
 	C:\Qt\6.4.2\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/DELL/Documents/build-Police_Management-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.4.2/mingw_64/mkspecs/win32-g++ -IC:/Users/DELL/Documents/Police_Management -IC:/Qt/6.4.2/mingw_64/include -IC:/Qt/6.4.2/mingw_64/include/QtWidgets -IC:/Qt/6.4.2/mingw_64/include/QtGui -IC:/Qt/6.4.2/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\Police_Management\user_login_page.h -o release\moc_user_login_page.cpp
@@ -1621,6 +1647,8 @@ release/moc_user_menu_page.cpp: ../Police_Management/user_menu_page.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/QSizeF \
 		../../../../Qt/6.4.2/mingw_64/include/QtGui/QTransform \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
+		../Police_Management/register_complaint.h \
+		../Police_Management/view_complaint_status.h \
 		release/moc_predefs.h \
 		../../../../Qt/6.4.2/mingw_64/bin/moc.exe
 	C:\Qt\6.4.2\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/DELL/Documents/build-Police_Management-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.4.2/mingw_64/mkspecs/win32-g++ -IC:/Users/DELL/Documents/Police_Management -IC:/Qt/6.4.2/mingw_64/include -IC:/Qt/6.4.2/mingw_64/include/QtWidgets -IC:/Qt/6.4.2/mingw_64/include/QtGui -IC:/Qt/6.4.2/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\Police_Management\user_menu_page.h -o release\moc_user_menu_page.cpp
@@ -1762,6 +1790,10 @@ release/moc_user_register_page.cpp: ../Police_Management/user_register_page.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/QSizeF \
 		../../../../Qt/6.4.2/mingw_64/include/QtGui/QTransform \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
+		../Police_Management/user_login_page.h \
+		../Police_Management/user_menu_page.h \
+		../Police_Management/register_complaint.h \
+		../Police_Management/view_complaint_status.h \
 		release/moc_predefs.h \
 		../../../../Qt/6.4.2/mingw_64/bin/moc.exe
 	C:\Qt\6.4.2\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/DELL/Documents/build-Police_Management-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.4.2/mingw_64/mkspecs/win32-g++ -IC:/Users/DELL/Documents/Police_Management -IC:/Qt/6.4.2/mingw_64/include -IC:/Qt/6.4.2/mingw_64/include/QtWidgets -IC:/Qt/6.4.2/mingw_64/include/QtGui -IC:/Qt/6.4.2/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\Police_Management\user_register_page.h -o release\moc_user_register_page.cpp
@@ -1906,147 +1938,6 @@ release/moc_view_complaint_status.cpp: ../Police_Management/view_complaint_statu
 		release/moc_predefs.h \
 		../../../../Qt/6.4.2/mingw_64/bin/moc.exe
 	C:\Qt\6.4.2\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/DELL/Documents/build-Police_Management-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.4.2/mingw_64/mkspecs/win32-g++ -IC:/Users/DELL/Documents/Police_Management -IC:/Qt/6.4.2/mingw_64/include -IC:/Qt/6.4.2/mingw_64/include/QtWidgets -IC:/Qt/6.4.2/mingw_64/include/QtGui -IC:/Qt/6.4.2/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\Police_Management\view_complaint_status.h -o release\moc_view_complaint_status.cpp
-
-release/moc_view_complaints.cpp: ../Police_Management/view_complaints.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QDialog \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qdialog.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qtguiglobal.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qglobal.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qconfig-bootstrapped.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qconfig.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qtcore-config.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qtconfigmacros.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qtcoreexports.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qsystemdetection.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qprocessordetection.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcompilerdetection.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qtypeinfo.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcontainerfwd.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qsysinfo.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qlogging.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qflags.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcompare_impl.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qatomic.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qbasicatomic.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qatomic_bootstrap.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qgenericatomic.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qatomic_cxx11.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qglobalstatic.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qnumeric.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qversiontagging.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qforeach.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qtgui-config.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qtguiexports.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qtwidgetsexports.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qwidget.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qwindowdefs.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qobjectdefs.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qnamespace.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qtmetamacros.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qobjectdefs_impl.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qwindowdefs_win.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qobject.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstring.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qchar.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstringview.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qbytearray.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qrefcount.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qarraydata.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qpair.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qarraydatapointer.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qarraydataops.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcontainertools_impl.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qbytearrayalgorithms.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qbytearrayview.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstringfwd.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstringliteral.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstringalgorithms.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qanystringview.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qutf8stringview.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstringtokenizer.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstringbuilder.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qlist.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qhashfunctions.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qiterator.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qbytearraylist.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstringlist.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qalgorithms.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstringmatcher.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcoreevent.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qscopedpointer.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qmetatype.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcompare.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qscopeguard.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qdatastream.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qiodevicebase.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qiterable.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qmetacontainer.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcontainerinfo.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qtaggedpointer.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qmath.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qobject_impl.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qbindingstorage.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qmargins.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qaction.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qkeysequence.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qicon.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qsize.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qpixmap.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qpaintdevice.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qrect.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qpoint.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qcolor.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qrgb.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qrgba64.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qsharedpointer.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qshareddata.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qsharedpointer_impl.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qimage.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qpixelformat.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qtransform.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qpolygon.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qregion.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qline.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qvariant.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qdebug.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qtextstream.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstringconverter_base.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcontiguouscache.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qmap.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qshareddata_impl.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qset.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qhash.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qvarlengtharray.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qpalette.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qbrush.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qfont.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qfontmetrics.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qfontinfo.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qsizepolicy.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qcursor.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qbitmap.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qevent.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qiodevice.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qpointer.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qurl.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qeventpoint.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qvector2d.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qvectornd.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qpointingdevice.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qinputdevice.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qscreen.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/QList \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/QObject \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/QRect \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/QSize \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/QSizeF \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/QTransform \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
-		release/moc_predefs.h \
-		../../../../Qt/6.4.2/mingw_64/bin/moc.exe
-	C:\Qt\6.4.2\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/DELL/Documents/build-Police_Management-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.4.2/mingw_64/mkspecs/win32-g++ -IC:/Users/DELL/Documents/Police_Management -IC:/Qt/6.4.2/mingw_64/include -IC:/Qt/6.4.2/mingw_64/include/QtWidgets -IC:/Qt/6.4.2/mingw_64/include/QtGui -IC:/Qt/6.4.2/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\Police_Management\view_complaints.h -o release\moc_view_complaints.cpp
 
 release/moc_view_fir.cpp: ../Police_Management/view_fir.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QDialog \
@@ -2193,9 +2084,9 @@ compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h ui_police_login_page.h ui_police_menu_page.h ui_police_register_page.h ui_register_complaint.h ui_register_fir.h ui_update_complaint_status.h ui_update_fir_status.h ui_user_login_page.h ui_user_menu_page.h ui_user_register_page.h ui_view_complaint_status.h ui_view_complaints.h ui_view_fir.h
+compiler_uic_make_all: ui_mainwindow.h ui_police_login_page.h ui_police_menu_page.h ui_police_register_page.h ui_register_complaint.h ui_register_fir.h ui_update_complaint_status.h ui_update_fir_status.h ui_user_login_page.h ui_user_menu_page.h ui_user_register_page.h ui_view_complaint_status.h ui_view_fir.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h ui_police_login_page.h ui_police_menu_page.h ui_police_register_page.h ui_register_complaint.h ui_register_fir.h ui_update_complaint_status.h ui_update_fir_status.h ui_user_login_page.h ui_user_menu_page.h ui_user_register_page.h ui_view_complaint_status.h ui_view_complaints.h ui_view_fir.h
+	-$(DEL_FILE) ui_mainwindow.h ui_police_login_page.h ui_police_menu_page.h ui_police_register_page.h ui_register_complaint.h ui_register_fir.h ui_update_complaint_status.h ui_update_fir_status.h ui_user_login_page.h ui_user_menu_page.h ui_user_register_page.h ui_view_complaint_status.h ui_view_fir.h
 ui_mainwindow.h: ../Police_Management/mainwindow.ui \
 		../../../../Qt/6.4.2/mingw_64/bin/uic.exe
 	C:\Qt\6.4.2\mingw_64\bin\uic.exe ..\Police_Management\mainwindow.ui -o ui_mainwindow.h
@@ -2244,10 +2135,6 @@ ui_view_complaint_status.h: ../Police_Management/view_complaint_status.ui \
 		../../../../Qt/6.4.2/mingw_64/bin/uic.exe
 	C:\Qt\6.4.2\mingw_64\bin\uic.exe ..\Police_Management\view_complaint_status.ui -o ui_view_complaint_status.h
 
-ui_view_complaints.h: ../Police_Management/view_complaints.ui \
-		../../../../Qt/6.4.2/mingw_64/bin/uic.exe
-	C:\Qt\6.4.2\mingw_64\bin\uic.exe ..\Police_Management\view_complaints.ui -o ui_view_complaints.h
-
 ui_view_fir.h: ../Police_Management/view_fir.ui \
 		../../../../Qt/6.4.2/mingw_64/bin/uic.exe
 	C:\Qt\6.4.2\mingw_64\bin\uic.exe ..\Police_Management\view_fir.ui -o ui_view_fir.h
@@ -2263,6 +2150,164 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 
 
 ####### Compile
+
+release/block.o: ../Police_Management/block.cpp ../Police_Management/block.h \
+		../Police_Management/global.h \
+		../Police_Management/user.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QString \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstring.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qchar.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qglobal.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qconfig-bootstrapped.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qconfig.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qtcore-config.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qtconfigmacros.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qtcoreexports.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qsystemdetection.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qprocessordetection.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcompilerdetection.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qtypeinfo.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcontainerfwd.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qsysinfo.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qlogging.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qflags.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcompare_impl.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qatomic.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qbasicatomic.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qatomic_bootstrap.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qgenericatomic.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qatomic_cxx11.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qglobalstatic.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qnumeric.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qversiontagging.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qforeach.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstringview.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qbytearray.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qrefcount.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qnamespace.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qtmetamacros.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qarraydata.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qpair.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qarraydatapointer.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qarraydataops.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcontainertools_impl.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qbytearrayalgorithms.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qbytearrayview.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstringfwd.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstringliteral.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstringalgorithms.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qanystringview.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qutf8stringview.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstringtokenizer.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstringbuilder.h \
+		../Police_Management/fir.h \
+		../Police_Management/complaint.h \
+		../Police_Management/policestation.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QMessageBox \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qmessagebox.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qtguiglobal.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qtgui-config.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qtguiexports.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qtwidgetsexports.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qdialog.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qwidget.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qwindowdefs.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qobjectdefs.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qobjectdefs_impl.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qwindowdefs_win.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qobject.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qlist.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qhashfunctions.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qiterator.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qbytearraylist.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstringlist.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qalgorithms.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstringmatcher.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcoreevent.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qscopedpointer.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qmetatype.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcompare.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qscopeguard.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qdatastream.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qiodevicebase.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qiterable.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qmetacontainer.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcontainerinfo.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qtaggedpointer.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qmath.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qobject_impl.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qbindingstorage.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qmargins.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qaction.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qkeysequence.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qicon.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qsize.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qpixmap.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qpaintdevice.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qrect.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qpoint.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qcolor.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qrgb.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qrgba64.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qsharedpointer.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qshareddata.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qsharedpointer_impl.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qimage.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qpixelformat.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qtransform.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qpolygon.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qregion.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qline.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qvariant.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qdebug.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qtextstream.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstringconverter_base.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcontiguouscache.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qmap.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qshareddata_impl.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qset.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qhash.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qvarlengtharray.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qpalette.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qbrush.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qfont.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qfontmetrics.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qfontinfo.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qsizepolicy.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qcursor.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qbitmap.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qevent.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qiodevice.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qpointer.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qurl.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qeventpoint.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qvector2d.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qvectornd.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qpointingdevice.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qinputdevice.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qscreen.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QList \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QObject \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QRect \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QSize \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QSizeF \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/QTransform \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QFile \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfile.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfiledevice.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QDir \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qdir.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfileinfo.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qdatetime.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcalendar.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qlocale.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QVector \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qvector.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QChar
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\block.o ..\Police_Management\block.cpp
 
 release/complaint.o: ../Police_Management/complaint.cpp ../Police_Management/complaint.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/QString \
@@ -2413,6 +2458,7 @@ release/global.o: ../Police_Management/global.cpp ../Police_Management/global.h 
 		../Police_Management/fir.h \
 		../Police_Management/complaint.h \
 		../Police_Management/policestation.h \
+		../Police_Management/block.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QMessageBox \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qmessagebox.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -2508,13 +2554,15 @@ release/global.o: ../Police_Management/global.cpp ../Police_Management/global.h 
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/QFile \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfile.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfiledevice.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/QTextStream \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/QDir \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/qdir.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfileinfo.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/qdatetime.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcalendar.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qlocale.h
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qlocale.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QVector \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qvector.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QTextStream
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\global.o ..\Police_Management\global.cpp
 
 release/main.o: ../Police_Management/main.cpp ../Police_Management/mainwindow.h \
@@ -2659,7 +2707,14 @@ release/main.o: ../Police_Management/main.cpp ../Police_Management/mainwindow.h 
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QDialog \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qdialog.h \
 		../Police_Management/user_menu_page.h \
+		../Police_Management/register_complaint.h \
+		../Police_Management/view_complaint_status.h \
 		../Police_Management/police_login_page.h \
+		../Police_Management/police_menu_page.h \
+		../Police_Management/update_complaint_status.h \
+		../Police_Management/register_fir.h \
+		../Police_Management/view_fir.h \
+		../Police_Management/update_fir_status.h \
 		../Police_Management/user_register_page.h \
 		../Police_Management/police_register_page.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QApplication \
@@ -2829,11 +2884,19 @@ release/mainwindow.o: ../Police_Management/mainwindow.cpp ../Police_Management/m
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QDialog \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qdialog.h \
 		../Police_Management/user_menu_page.h \
+		../Police_Management/register_complaint.h \
+		../Police_Management/view_complaint_status.h \
 		../Police_Management/police_login_page.h \
+		../Police_Management/police_menu_page.h \
+		../Police_Management/update_complaint_status.h \
+		../Police_Management/register_fir.h \
+		../Police_Management/view_fir.h \
+		../Police_Management/update_fir_status.h \
 		../Police_Management/user_register_page.h \
 		../Police_Management/police_register_page.h \
 		ui_mainwindow.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/QVariant \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/QAction \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QApplication \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qapplication.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcoreapplication.h \
@@ -2857,9 +2920,10 @@ release/mainwindow.o: ../Police_Management/mainwindow.cpp ../Police_Management/m
 		../../../../Qt/6.4.2/mingw_64/include/QtGui/qinputmethod.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/qlocale.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtGui/qguiapplication_platform.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QMenu \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qmenu.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QMenuBar \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qmenubar.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qmenu.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QPushButton \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qpushbutton.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qabstractbutton.h \
@@ -3010,6 +3074,11 @@ release/police_login_page.o: ../Police_Management/police_login_page.cpp ../Polic
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/QSizeF \
 		../../../../Qt/6.4.2/mingw_64/include/QtGui/QTransform \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
+		../Police_Management/police_menu_page.h \
+		../Police_Management/update_complaint_status.h \
+		../Police_Management/register_fir.h \
+		../Police_Management/view_fir.h \
+		../Police_Management/update_fir_status.h \
 		ui_police_login_page.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/QVariant \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QApplication \
@@ -3054,7 +3123,36 @@ release/police_login_page.o: ../Police_Management/police_login_page.cpp ../Polic
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QPushButton \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qpushbutton.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qabstractbutton.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QVBoxLayout
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QVBoxLayout \
+		../Police_Management/global.h \
+		../Police_Management/user.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QString \
+		../Police_Management/fir.h \
+		../Police_Management/complaint.h \
+		../Police_Management/policestation.h \
+		../Police_Management/block.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QMessageBox \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qmessagebox.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QFile \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfile.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfiledevice.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QDir \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qdir.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfileinfo.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qdatetime.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcalendar.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QVector \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qvector.h \
+		../Police_Management/mainwindow.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QMainWindow \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qmainwindow.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qtabwidget.h \
+		../Police_Management/user_login_page.h \
+		../Police_Management/user_menu_page.h \
+		../Police_Management/register_complaint.h \
+		../Police_Management/view_complaint_status.h \
+		../Police_Management/user_register_page.h \
+		../Police_Management/police_register_page.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\police_login_page.o ..\Police_Management\police_login_page.cpp
 
 release/police_menu_page.o: ../Police_Management/police_menu_page.cpp ../Police_Management/police_menu_page.h \
@@ -3194,6 +3292,10 @@ release/police_menu_page.o: ../Police_Management/police_menu_page.cpp ../Police_
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/QSizeF \
 		../../../../Qt/6.4.2/mingw_64/include/QtGui/QTransform \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
+		../Police_Management/update_complaint_status.h \
+		../Police_Management/register_fir.h \
+		../Police_Management/view_fir.h \
+		../Police_Management/update_fir_status.h \
 		ui_police_menu_page.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/QVariant \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QApplication \
@@ -3231,7 +3333,37 @@ release/police_menu_page.o: ../Police_Management/police_menu_page.cpp ../Police_
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qboxlayout.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qlayout.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qlayoutitem.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qgridlayout.h
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qgridlayout.h \
+		../Police_Management/mainwindow.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QMainWindow \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qmainwindow.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qtabwidget.h \
+		../Police_Management/user_login_page.h \
+		../Police_Management/user_menu_page.h \
+		../Police_Management/register_complaint.h \
+		../Police_Management/view_complaint_status.h \
+		../Police_Management/police_login_page.h \
+		../Police_Management/user_register_page.h \
+		../Police_Management/police_register_page.h \
+		../Police_Management/global.h \
+		../Police_Management/user.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QString \
+		../Police_Management/fir.h \
+		../Police_Management/complaint.h \
+		../Police_Management/policestation.h \
+		../Police_Management/block.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QMessageBox \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qmessagebox.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QFile \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfile.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfiledevice.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QDir \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qdir.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfileinfo.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qdatetime.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcalendar.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QVector \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qvector.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\police_menu_page.o ..\Police_Management\police_menu_page.cpp
 
 release/police_register_page.o: ../Police_Management/police_register_page.cpp ../Police_Management/police_register_page.h \
@@ -3371,6 +3503,12 @@ release/police_register_page.o: ../Police_Management/police_register_page.cpp ..
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/QSizeF \
 		../../../../Qt/6.4.2/mingw_64/include/QtGui/QTransform \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
+		../Police_Management/police_login_page.h \
+		../Police_Management/police_menu_page.h \
+		../Police_Management/update_complaint_status.h \
+		../Police_Management/register_fir.h \
+		../Police_Management/view_fir.h \
+		../Police_Management/update_fir_status.h \
 		ui_police_register_page.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/QVariant \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QApplication \
@@ -3415,7 +3553,35 @@ release/police_register_page.o: ../Police_Management/police_register_page.cpp ..
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QPushButton \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qpushbutton.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qabstractbutton.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QVBoxLayout
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QVBoxLayout \
+		../Police_Management/global.h \
+		../Police_Management/user.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QString \
+		../Police_Management/fir.h \
+		../Police_Management/complaint.h \
+		../Police_Management/policestation.h \
+		../Police_Management/block.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QMessageBox \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qmessagebox.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QFile \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfile.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfiledevice.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QDir \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qdir.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfileinfo.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qdatetime.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcalendar.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QVector \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qvector.h \
+		../Police_Management/mainwindow.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QMainWindow \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qmainwindow.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qtabwidget.h \
+		../Police_Management/user_login_page.h \
+		../Police_Management/user_menu_page.h \
+		../Police_Management/register_complaint.h \
+		../Police_Management/view_complaint_status.h \
+		../Police_Management/user_register_page.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\police_register_page.o ..\Police_Management\police_register_page.cpp
 
 release/policestation.o: ../Police_Management/policestation.cpp ../Police_Management/policestation.h \
@@ -3648,7 +3814,28 @@ release/register_complaint.o: ../Police_Management/register_complaint.cpp ../Pol
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QPushButton \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qpushbutton.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qabstractbutton.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QVBoxLayout
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QVBoxLayout \
+		../Police_Management/global.h \
+		../Police_Management/user.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QString \
+		../Police_Management/fir.h \
+		../Police_Management/complaint.h \
+		../Police_Management/policestation.h \
+		../Police_Management/block.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QMessageBox \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qmessagebox.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QFile \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfile.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfiledevice.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QDir \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qdir.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfileinfo.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qdatetime.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcalendar.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QVector \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qvector.h \
+		../Police_Management/user_menu_page.h \
+		../Police_Management/view_complaint_status.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\register_complaint.o ..\Police_Management\register_complaint.cpp
 
 release/register_fir.o: ../Police_Management/register_fir.cpp ../Police_Management/register_fir.h \
@@ -3832,8 +4019,80 @@ release/register_fir.o: ../Police_Management/register_fir.cpp ../Police_Manageme
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QPushButton \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qpushbutton.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qabstractbutton.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QVBoxLayout
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QVBoxLayout \
+		../Police_Management/global.h \
+		../Police_Management/user.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QString \
+		../Police_Management/fir.h \
+		../Police_Management/complaint.h \
+		../Police_Management/policestation.h \
+		../Police_Management/block.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QMessageBox \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qmessagebox.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QFile \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfile.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfiledevice.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QDir \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qdir.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfileinfo.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qdatetime.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcalendar.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QVector \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qvector.h \
+		../Police_Management/police_menu_page.h \
+		../Police_Management/update_complaint_status.h \
+		../Police_Management/view_fir.h \
+		../Police_Management/update_fir_status.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\register_fir.o ..\Police_Management\register_fir.cpp
+
+release/sha256.o: ../Police_Management/sha256.cpp ../Police_Management/sha256.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QString \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstring.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qchar.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qglobal.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qconfig-bootstrapped.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qconfig.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qtcore-config.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qtconfigmacros.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qtcoreexports.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qsystemdetection.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qprocessordetection.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcompilerdetection.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qtypeinfo.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcontainerfwd.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qsysinfo.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qlogging.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qflags.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcompare_impl.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qatomic.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qbasicatomic.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qatomic_bootstrap.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qgenericatomic.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qatomic_cxx11.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qglobalstatic.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qnumeric.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qversiontagging.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qforeach.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstringview.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qbytearray.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qrefcount.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qnamespace.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qtmetamacros.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qarraydata.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qpair.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qarraydatapointer.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qarraydataops.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcontainertools_impl.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qbytearrayalgorithms.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qbytearrayview.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstringfwd.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstringliteral.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstringalgorithms.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qanystringview.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qutf8stringview.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstringtokenizer.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstringbuilder.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\sha256.o ..\Police_Management\sha256.cpp
 
 release/update_complaint_status.o: ../Police_Management/update_complaint_status.cpp ../Police_Management/update_complaint_status.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QDialog \
@@ -4016,7 +4275,30 @@ release/update_complaint_status.o: ../Police_Management/update_complaint_status.
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QPushButton \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qpushbutton.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qabstractbutton.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QVBoxLayout
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QVBoxLayout \
+		../Police_Management/police_menu_page.h \
+		../Police_Management/register_fir.h \
+		../Police_Management/view_fir.h \
+		../Police_Management/update_fir_status.h \
+		../Police_Management/global.h \
+		../Police_Management/user.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QString \
+		../Police_Management/fir.h \
+		../Police_Management/complaint.h \
+		../Police_Management/policestation.h \
+		../Police_Management/block.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QMessageBox \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qmessagebox.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QFile \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfile.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfiledevice.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QDir \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qdir.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfileinfo.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qdatetime.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcalendar.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QVector \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qvector.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\update_complaint_status.o ..\Police_Management\update_complaint_status.cpp
 
 release/update_fir_status.o: ../Police_Management/update_fir_status.cpp ../Police_Management/update_fir_status.h \
@@ -4200,7 +4482,30 @@ release/update_fir_status.o: ../Police_Management/update_fir_status.cpp ../Polic
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QPushButton \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qpushbutton.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qabstractbutton.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QVBoxLayout
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QVBoxLayout \
+		../Police_Management/police_menu_page.h \
+		../Police_Management/update_complaint_status.h \
+		../Police_Management/register_fir.h \
+		../Police_Management/view_fir.h \
+		../Police_Management/global.h \
+		../Police_Management/user.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QString \
+		../Police_Management/fir.h \
+		../Police_Management/complaint.h \
+		../Police_Management/policestation.h \
+		../Police_Management/block.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QMessageBox \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qmessagebox.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QFile \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfile.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfiledevice.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QDir \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qdir.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfileinfo.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qdatetime.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcalendar.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QVector \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qvector.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\update_fir_status.o ..\Police_Management\update_fir_status.cpp
 
 release/user.o: ../Police_Management/user.cpp ../Police_Management/user.h \
@@ -4390,6 +4695,8 @@ release/user_login_page.o: ../Police_Management/user_login_page.cpp ../Police_Ma
 		../../../../Qt/6.4.2/mingw_64/include/QtGui/QTransform \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
 		../Police_Management/user_menu_page.h \
+		../Police_Management/register_complaint.h \
+		../Police_Management/view_complaint_status.h \
 		ui_user_login_page.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/QVariant \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QApplication \
@@ -4441,8 +4748,31 @@ release/user_login_page.o: ../Police_Management/user_login_page.cpp ../Police_Ma
 		../Police_Management/fir.h \
 		../Police_Management/complaint.h \
 		../Police_Management/policestation.h \
+		../Police_Management/block.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QMessageBox \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qmessagebox.h
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qmessagebox.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QFile \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfile.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfiledevice.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QDir \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qdir.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfileinfo.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qdatetime.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcalendar.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QVector \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qvector.h \
+		../Police_Management/mainwindow.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QMainWindow \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qmainwindow.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qtabwidget.h \
+		../Police_Management/police_login_page.h \
+		../Police_Management/police_menu_page.h \
+		../Police_Management/update_complaint_status.h \
+		../Police_Management/register_fir.h \
+		../Police_Management/view_fir.h \
+		../Police_Management/update_fir_status.h \
+		../Police_Management/user_register_page.h \
+		../Police_Management/police_register_page.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\user_login_page.o ..\Police_Management\user_login_page.cpp
 
 release/user_menu_page.o: ../Police_Management/user_menu_page.cpp ../Police_Management/user_menu_page.h \
@@ -4582,6 +4912,8 @@ release/user_menu_page.o: ../Police_Management/user_menu_page.cpp ../Police_Mana
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/QSizeF \
 		../../../../Qt/6.4.2/mingw_64/include/QtGui/QTransform \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
+		../Police_Management/register_complaint.h \
+		../Police_Management/view_complaint_status.h \
 		ui_user_menu_page.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/QVariant \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QApplication \
@@ -4619,7 +4951,20 @@ release/user_menu_page.o: ../Police_Management/user_menu_page.cpp ../Police_Mana
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qboxlayout.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qlayout.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qlayoutitem.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qgridlayout.h
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qgridlayout.h \
+		../Police_Management/mainwindow.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QMainWindow \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qmainwindow.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qtabwidget.h \
+		../Police_Management/user_login_page.h \
+		../Police_Management/police_login_page.h \
+		../Police_Management/police_menu_page.h \
+		../Police_Management/update_complaint_status.h \
+		../Police_Management/register_fir.h \
+		../Police_Management/view_fir.h \
+		../Police_Management/update_fir_status.h \
+		../Police_Management/user_register_page.h \
+		../Police_Management/police_register_page.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\user_menu_page.o ..\Police_Management\user_menu_page.cpp
 
 release/user_register_page.o: ../Police_Management/user_register_page.cpp ../Police_Management/user_register_page.h \
@@ -4759,6 +5104,10 @@ release/user_register_page.o: ../Police_Management/user_register_page.cpp ../Pol
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/QSizeF \
 		../../../../Qt/6.4.2/mingw_64/include/QtGui/QTransform \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
+		../Police_Management/user_login_page.h \
+		../Police_Management/user_menu_page.h \
+		../Police_Management/register_complaint.h \
+		../Police_Management/view_complaint_status.h \
 		ui_user_register_page.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/QVariant \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QApplication \
@@ -4804,14 +5153,36 @@ release/user_register_page.o: ../Police_Management/user_register_page.cpp ../Pol
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qpushbutton.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qabstractbutton.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QVBoxLayout \
+		../Police_Management/global.h \
 		../Police_Management/user.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/QString \
-		../Police_Management/global.h \
 		../Police_Management/fir.h \
 		../Police_Management/complaint.h \
 		../Police_Management/policestation.h \
+		../Police_Management/block.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QMessageBox \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qmessagebox.h
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qmessagebox.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QFile \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfile.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfiledevice.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QDir \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qdir.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfileinfo.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qdatetime.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcalendar.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QVector \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qvector.h \
+		../Police_Management/mainwindow.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QMainWindow \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qmainwindow.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qtabwidget.h \
+		../Police_Management/police_login_page.h \
+		../Police_Management/police_menu_page.h \
+		../Police_Management/update_complaint_status.h \
+		../Police_Management/register_fir.h \
+		../Police_Management/view_fir.h \
+		../Police_Management/update_fir_status.h \
+		../Police_Management/police_register_page.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\user_register_page.o ..\Police_Management\user_register_page.cpp
 
 release/view_complaint_status.o: ../Police_Management/view_complaint_status.cpp ../Police_Management/view_complaint_status.h \
@@ -4992,183 +5363,32 @@ release/view_complaint_status.o: ../Police_Management/view_complaint_status.cpp 
 		../../../../Qt/6.4.2/mingw_64/include/QtGui/qtextformat.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtGui/qpen.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtGui/qtextoption.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QVBoxLayout
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QPushButton \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qpushbutton.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qabstractbutton.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QVBoxLayout \
+		../Police_Management/global.h \
+		../Police_Management/user.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QString \
+		../Police_Management/fir.h \
+		../Police_Management/complaint.h \
+		../Police_Management/policestation.h \
+		../Police_Management/block.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QMessageBox \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qmessagebox.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QFile \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfile.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfiledevice.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QDir \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qdir.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfileinfo.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qdatetime.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcalendar.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QVector \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qvector.h \
+		../Police_Management/user_menu_page.h \
+		../Police_Management/register_complaint.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\view_complaint_status.o ..\Police_Management\view_complaint_status.cpp
-
-release/view_complaints.o: ../Police_Management/view_complaints.cpp ../Police_Management/view_complaints.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QDialog \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qdialog.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qtguiglobal.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qglobal.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qconfig-bootstrapped.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qconfig.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qtcore-config.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qtconfigmacros.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qtcoreexports.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qsystemdetection.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qprocessordetection.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcompilerdetection.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qtypeinfo.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcontainerfwd.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qsysinfo.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qlogging.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qflags.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcompare_impl.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qatomic.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qbasicatomic.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qatomic_bootstrap.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qgenericatomic.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qatomic_cxx11.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qglobalstatic.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qnumeric.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qversiontagging.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qforeach.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qtgui-config.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qtguiexports.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qtwidgetsexports.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qwidget.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qwindowdefs.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qobjectdefs.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qnamespace.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qtmetamacros.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qobjectdefs_impl.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qwindowdefs_win.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qobject.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstring.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qchar.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstringview.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qbytearray.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qrefcount.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qarraydata.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qpair.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qarraydatapointer.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qarraydataops.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcontainertools_impl.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qbytearrayalgorithms.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qbytearrayview.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstringfwd.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstringliteral.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstringalgorithms.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qanystringview.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qutf8stringview.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstringtokenizer.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstringbuilder.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qlist.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qhashfunctions.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qiterator.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qbytearraylist.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstringlist.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qalgorithms.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstringmatcher.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcoreevent.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qscopedpointer.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qmetatype.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcompare.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qscopeguard.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qdatastream.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qiodevicebase.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qiterable.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qmetacontainer.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcontainerinfo.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qtaggedpointer.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qmath.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qobject_impl.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qbindingstorage.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qmargins.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qaction.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qkeysequence.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qicon.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qsize.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qpixmap.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qpaintdevice.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qrect.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qpoint.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qcolor.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qrgb.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qrgba64.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qsharedpointer.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qshareddata.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qsharedpointer_impl.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qimage.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qpixelformat.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qtransform.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qpolygon.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qregion.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qline.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qvariant.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qdebug.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qtextstream.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qstringconverter_base.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcontiguouscache.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qmap.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qshareddata_impl.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qset.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qhash.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qvarlengtharray.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qpalette.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qbrush.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qfont.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qfontmetrics.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qfontinfo.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qsizepolicy.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qcursor.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qbitmap.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qevent.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qiodevice.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qpointer.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qurl.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qeventpoint.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qvector2d.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qvectornd.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qpointingdevice.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qinputdevice.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qscreen.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/QList \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/QObject \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/QRect \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/QSize \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/QSizeF \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/QTransform \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qnativeinterface.h \
-		ui_view_complaints.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/QVariant \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QApplication \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qapplication.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcoreapplication.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qeventloop.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcoreapplication_platform.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qjnitypes.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfuture.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfutureinterface.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qmutex.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qtsan_impl.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qresultstore.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfuture_impl.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qthreadpool.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qthread.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qdeadlinetimer.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qelapsedtimer.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qrunnable.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qexception.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qpromise.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qguiapplication.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qinputmethod.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtCore/qlocale.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qguiapplication_platform.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QHBoxLayout \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qboxlayout.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qlayout.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qlayoutitem.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qgridlayout.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QLabel \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qlabel.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qframe.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qpicture.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtGui/qtextdocument.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QVBoxLayout
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\view_complaints.o ..\Police_Management\view_complaints.cpp
 
 release/view_fir.o: ../Police_Management/view_fir.cpp ../Police_Management/view_fir.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QDialog \
@@ -5332,17 +5552,49 @@ release/view_fir.o: ../Police_Management/view_fir.cpp ../Police_Management/view_
 		../../../../Qt/6.4.2/mingw_64/include/QtGui/qinputmethod.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtCore/qlocale.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtGui/qguiapplication_platform.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QHBoxLayout \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qboxlayout.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qlayout.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qlayoutitem.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qgridlayout.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QLabel \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qlabel.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qframe.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtGui/qpicture.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtGui/qtextdocument.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QLineEdit \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qlineedit.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qtextcursor.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qtextformat.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qpen.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtGui/qtextoption.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QPushButton \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qpushbutton.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qabstractbutton.h \
 		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QVBoxLayout \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qboxlayout.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qlayout.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qlayoutitem.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qgridlayout.h \
-		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QWidget
+		../Police_Management/police_menu_page.h \
+		../Police_Management/update_complaint_status.h \
+		../Police_Management/register_fir.h \
+		../Police_Management/update_fir_status.h \
+		../Police_Management/global.h \
+		../Police_Management/user.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QString \
+		../Police_Management/fir.h \
+		../Police_Management/complaint.h \
+		../Police_Management/policestation.h \
+		../Police_Management/block.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/QMessageBox \
+		../../../../Qt/6.4.2/mingw_64/include/QtWidgets/qmessagebox.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QFile \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfile.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfiledevice.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QDir \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qdir.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qfileinfo.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qdatetime.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qcalendar.h \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/QVector \
+		../../../../Qt/6.4.2/mingw_64/include/QtCore/qvector.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\view_fir.o ..\Police_Management\view_fir.cpp
 
 release/moc_mainwindow.o: release/moc_mainwindow.cpp 
@@ -5380,9 +5632,6 @@ release/moc_user_register_page.o: release/moc_user_register_page.cpp
 
 release/moc_view_complaint_status.o: release/moc_view_complaint_status.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\moc_view_complaint_status.o release\moc_view_complaint_status.cpp
-
-release/moc_view_complaints.o: release/moc_view_complaints.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\moc_view_complaints.o release\moc_view_complaints.cpp
 
 release/moc_view_fir.o: release/moc_view_fir.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\moc_view_fir.o release\moc_view_fir.cpp
